@@ -1,0 +1,197 @@
+<section class="login-form sign-up-form d-flex align-items-center">
+  <div class="container">
+    <div class="login-form-title text-center">
+
+      <h2>Create Your FREE Account</h2>
+    </div>
+    <div class="login-form-box">
+      <div class="login-card">
+        <form [formGroup]="signupForm">
+          <div class="animated-border">
+            <div class="container">
+              <div class="row justify-content-center align-items-center">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4>Are you an Assistant or User?</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="userType" id="userType1" value="assistant"
+                            formControlName="userType" (click)="showInputs('assistant')">
+                          <label class="form-check-label" for="userType1">
+                            <!-- <button (click)="showInputs('assistant')">Assistant</button> -->
+                            Assistant
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="userType" id="userType2" value="user"
+                            formControlName="userType" checked (click)="showInputs('user')">
+                          <label class="form-check-label" for="userType2">
+                            <!-- <button (click)="showInputs('user')" style="background-color: #8bc53e; border: #8bc53e;">User</button> -->
+                            User   
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input class="input-field form-control" type="text" id="exampleInputName1" formControlName="firstName"
+                placeholder="First Name ">
+            </div>
+            <div *ngIf="signupForm.controls['firstName'].invalid && 
+                      (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+              <div *ngIf="signupForm.controls['firstName'].errors.minlength" style="color: red;">
+                First Name must have at least 3 chars
+              </div>
+              <div *ngIf="signupForm.controls['firstName'].errors.required" style="color: red;">
+                First Name required
+              </div>
+            </div>
+            <div class="form-group">
+              <input class="input-field form-control" type="text" id="exampleInputName2" formControlName="lastName"
+                placeholder="Last Name">
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].invalid && 
+              (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+              <div *ngIf="signupForm.controls['lastName'].errors.minlength" style="color: red;">
+                last Name must have at least 3 chars
+              </div>
+              <div *ngIf="signupForm.controls['lastName'].errors.required" style="color: red;">
+                last Name required
+              </div>
+            </div>
+            <div class="form-group">
+              <input class="input-field form-control" type="email" id="exampleInputEmail1" formControlName="email"
+                placeholder="Email" required>
+            </div>
+            <div *ngIf="signupForm.controls['email'].invalid && 
+              (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+              <div *ngIf="signupForm.controls['email'].errors.required" style="color: red;">
+                Email is required
+              </div>
+              <div *ngIf="signupForm.controls['email'].errors.email" style="color: red;">
+                Email is not valid
+              </div>
+            </div>
+            <span style="color: red;">{{msgError}}</span>
+            <div class="form-group">
+              <input class="input-field form-control" type="password" id="exampleInputPassword1"
+                formControlName="password" placeholder="Password" required>
+            </div>
+            <div *ngIf="signupForm.controls['password'].invalid && 
+              (signupForm.controls['password'].touched || signupForm.controls['password'].dirty)">
+              <div *ngIf="signupForm.controls['password'].errors.required" style="color: red;">
+                password is required
+              </div>
+              <div *ngIf="signupForm.controls['password'].errors.minlength" style="color: red;">
+                password must have at least 6 chars
+              </div>
+              <div *ngIf="signupForm.controls['password'].errors.maxlength" style="color: red;">
+                password must have at most 12 chars
+              </div>
+            </div>
+            <div class="form-group">
+              <input class="input-field form-control" type="number" formControlName="phoneNumber"
+                id="exampleInputNumber" placeholder="Phone Number" required>
+            </div>
+            <div *ngIf="signupForm.controls['phoneNumber'].invalid && 
+              (signupForm.controls['phoneNumber'].touched || signupForm.controls['phoneNumber'].dirty)">
+              <div *ngIf="signupForm.controls['phoneNumber'].errors.required" style="color: red;">
+                Phone Number is required
+              </div>
+              <div *ngIf="signupForm.controls['phoneNumber'].errors.minlength" style="color: red;">
+                Phone Number is not valid
+              </div>
+            </div>
+            <div class="form-group">
+              <input class="input-field form-control" type="text" formControlName="address" id="exampleInputAdresse"
+                placeholder="Address" required>
+            </div>
+            <div *ngIf="signupForm.controls['address'].invalid && 
+              (signupForm.controls['address'].touched || signupForm.controls['address'].dirty)">
+              <div *ngIf="signupForm.controls['address'].errors.required" style="color:red;">
+                address is required
+              </div>
+              <div *ngIf="signupForm.controls['address'].errors.pattern" style="color: red;">
+                address is not valid
+              </div>
+            </div>
+            <div class="form-group" *ngIf="showAssistantInputs">
+              <input class="input-field form-control" type="text" id="exampleInputEmail10" formControlName="experience"
+                placeholder="Experience" required>
+            </div>
+            <div *ngIf="signupForm.controls['experience'].invalid && 
+              (signupForm.controls['experience'].touched || signupForm.controls['experience'].dirty)">
+              <div *ngIf="signupForm.controls['experience'].errors.required" style="color:red;">
+                Experience is required
+              </div>
+            </div>
+            <div class="form-group" *ngIf="showAssistantInputs">
+              <input class="input-field form-control" type="text" id="exampleInputEmail11" formControlName="price"
+                placeholder="Price {{'/month'}}" required>
+            </div>
+            <div *ngIf="signupForm.controls['price'].invalid && 
+              (signupForm.controls['price'].touched || signupForm.controls['price'].dirty)">
+              <div *ngIf="signupForm.controls['price'].errors.required" style="color:red;">
+                price is required
+              </div>
+
+
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select class="form-control" formControlName="gender" id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="birthday">Birthday Date:</label>
+              <input type="date" class="form-control" formControlName="birthday" id="birthday" name="birthday" required>
+            </div>
+            <div class="form-group" style="visibility: hidden;">
+              <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+            </div>
+            <div class="text-center mt-4">
+              <button class="btn btn-info" (click)="filePicker.click()"
+                style="background-color:#8bc53e; font-size: 15px; color: black; border: #8bc53e;">
+                select your Avatar
+              </button>
+            </div>
+            <!-- <div class="text-center mt-5">
+                <img [src]="imagePreview" alt="" width="200px">
+              </div> -->
+            <div class="form-group" style="visibility: hidden;">
+              <input type="file" #pdf (change)="onFileSelected($event)" />
+              <!-- <button type="submit">Upload</button> -->
+            </div>
+            <div class="text-center mt-1">
+              <button class="btn btn-info" (click)="pdf.click()"
+                style="background-color:#8bc53e; font-size: 15px; color:black; border: #8bc53e;">
+                Choose your document
+              </button>
+            </div>
+            <div>
+              <label class="font-weight-normal mb-md-4 mb-3" style="cursor: pointer;">
+                <input class="checkbox" type="checkbox">
+                Inform me about new features and updates
+              </label>
+            </div>
+            <button type="submit" (click)="signup()" class="hover-effect btn btn-primary mb-0"
+              [disabled]="signupForm.invalid">Register Now</button>
+          </div>
+        </form>
+      </div>
+      <div class="join-now-outer text-center">
+        <a routerLink="/login">Already have an account?</a>
+      </div>
+    </div>
+  </div>
+</section>

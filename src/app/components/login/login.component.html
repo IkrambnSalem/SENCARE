@@ -1,0 +1,58 @@
+<section class="login-form d-flex align-items-center">
+    <div class="container">
+        <div class="login-form-title text-center">
+            <figure class="login-page-logo">
+                <a class="navbar-brand mr-0 p-0" href="index-2.html"><img src="assets/images/sencare-logo2.png" alt=""
+                        class="img-fluid"></a>
+            </figure>
+            <h2>Welcome Back !</h2>
+        </div>
+        <div class="login-form-box">
+            <div class="login-card">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <input class="input-field form-control" type="text" formControlName="login"
+                            id="exampleInputEmail1" placeholder="Email or Phone Number" required>
+                    </div>
+                    <div *ngIf="loginForm.controls['login'].invalid && 
+                    (loginForm.controls['login'].touched || loginForm.controls['login'].dirty)">
+                        <!-- <div *ngIf="loginForm.controls['login'].errors.pattern" style="color: red;">
+                            Email or Phone Number is not valid 
+                        </div> -->
+                        <div *ngIf="loginForm.controls['login'].errors.required" style="color: red;">
+                            Email or Phone Number is required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="input-field form-control" type="password" formControlName="password"
+                            id="exampleInputPassword1" placeholder="Password" required>
+                    </div>
+                    <div *ngIf="loginForm.controls['password'].invalid && 
+                    (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+
+                        <div *ngIf="loginForm.controls['password'].errors.required" style="color: red;">
+                            password is required
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary hover-effect" (click)="login()">Login</button>
+                    <div>
+                        <label class="font-weight-normal mb-0" style="cursor: pointer;">
+                            <input class="checkbox" type="checkbox" name="userRememberMe" required>
+                            Remember me
+                        </label>
+                        <a routerLink="/reset-password" class="forgot-password float-right">Lost Password?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="join-now-outer text-center">
+                <a routerLink="/subscription">Join now, create your FREE account</a>
+            </div>
+            <button (click)="loginWithGoogle()" class="btn btn-primary hover-effect"
+                style="background-color: #8bc53e; margin-left: 135px; margin-top: 20px; border: #8bc53e;">
+                <i class="fa fa-envelope"></i>
+                Login With Gmail
+            </button>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,63 @@
+.navbar {
+  background-image: url("/assets/images/banner1-img.jpg");
+background-size: cover;
+
+}
+.header {
+top: 0;
+left: 0;
+width: 100%;
+z-index: 9999;
+}
+.profile-dropdown {
+  font-size: 14px;
+}
+
+.profile-dropdown .dropdown-item {
+  padding: 8px 16px;
+}
+
+.profile-dropdown .dropdown-toggle::after {
+  display: none;
+}
+
+.profile-dropdown .dropdown-menu {
+  border: none;
+  padding: 0;
+  margin-top: 5px;
+  box-shadow: 0 3px 6px rgba(121, 173, 130, 0.16);
+}
+
+.profile-dropdown .dropdown-menu a {
+  font-size: 14px;
+  color: #212529;
+}
+
+.profile-dropdown .dropdown-menu a:hover {
+  background-color: #212529;
+  color: #212529;
+}
+
+/* serch input */
+.search-btn {
+  background-color:  #8bc53e;
+  border-color:  #8bc53e;
+  color: #fff;
+  font-weight: 400;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-left: 10px;
+}
+
+.search-btn:hover {
+  background-color:  #8bc53e;
+  border-color:  #8bc53e;
+  cursor: pointer;
+}
+input {
+  width: 00%;
+  height: 1000%;
+}

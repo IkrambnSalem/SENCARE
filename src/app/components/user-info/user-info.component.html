@@ -1,0 +1,46 @@
+<section class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="left-section" data-aos="fade-up">
+                    <img [src]="user.avatar">
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="right-section">
+               
+                    <h2>User Information</h2>
+                    <div class="input-icons">
+                     <div class="form-group position-relative">
+                        <label for="validationCustom01"  class="form-control input-text">{{user.firstName}} {{user.lastName}}</label>
+                       <i class="fa fa-user icon1">  </i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <label for="validationCustom02"  class="form-control input-text">{{user.phoneNumber}}</label>
+                        <i class="fa-solid fa-phone icon2"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <label for="validationCustom03" class="form-control input-text">{{user.email}}</label>
+                        <i class="fa-solid fa-envelope icon3"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <label for="validationCustom04" class="form-control input-text">{{user.address}}</label>
+                        <i class="fa-solid fa-map-marker-alt icon3"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <label for="validationCustom05" class="form-control input-text">{{user.gender}}</label>
+                    <i class="fa-solid fa-venus-mars icon3"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <label for="validationCustom06" class="form-control input-text">{{user.birthday|date}}</label>
+                        <i class="fa-solid fa-calendar-alt icon3"></i>
+                     </div>
+                    </div>
+                   
+          
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>

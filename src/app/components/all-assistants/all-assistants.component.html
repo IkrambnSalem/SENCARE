@@ -1,0 +1,43 @@
+
+
+<div class="service-offer-section service-offer-section2 sencare-tem-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="service-offer-content" data-aos="fade-up">
+            <h2>SenCare<span class="support">Team</span></h2>
+            <p>The Assistant page displays a list of all available assistants, both confirmed and
+              unconfirmed, for users to choose from and take care of their loved ones.</p>
+          </div>
+          <div class="service-inner">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let Assistant of assistantTab">
+                <div class="sencare-team-inner">
+                    <figure>
+                        <ng-container *ngIf="Assistant.avatar">
+                            <img [src]="Assistant.avatar" alt="" >
+                        </ng-container>
+                        <ng-container *ngIf="!Assistant.avatar">
+                            <img src="assets/images/latest-blog-img1.png" alt="">
+                        </ng-container>
+                    </figure>
+                  <h5>{{Assistant.firstName}}</h5>
+                  <p>{{Assistant.price}}</p>
+                  <!-- <p>{{Assistant.price}}</p>
+                  <p>{{Assistant.experience}}</p> -->
+                  <div class="hover_box_plus">
+                
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                  <a  (click)="gotoAssistant(Assistant._id)" class="btn btn-success" style="background-color:#8bc53e; color: white; border: #8bc53e; margin-bottom: 40px;">Read More</a>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

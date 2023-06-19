@@ -1,0 +1,24 @@
+
+
+
+<div class="blogs-content-box">
+    <figure>
+        <ng-container *ngIf="X.avatar">
+            <img [src]="X.avatar" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </ng-container>
+        <ng-container *ngIf="!X.avatar">
+            <img src="assets/images/latest-blog-img1.png" alt="" class="img-fluid">
+        </ng-container>
+    </figure>
+    <div >
+    <p ><a  class="blogs-title" (click)="gotoMap(X.address) " style="font-size: 20px; text-decoration: none;">{{X.address}}</a></p>
+    <h5 class="blogs-text">{{X.experience}}</h5>
+    <h5 class="blogs-text">{{X.firstName}} {{X.lastName}}</h5>
+    <h3 class="blogs-text">{{X.gender}}</h3>
+
+    <div class="blogs-btn">
+        <a (click)="gotoAssistant(X._id)" data-toggle="modal">Read More</a>
+    </div>
+</div>
+</div>
+

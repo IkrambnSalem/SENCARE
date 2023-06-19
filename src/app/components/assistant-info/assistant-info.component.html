@@ -1,0 +1,42 @@
+<div class="choose-us-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 pt-2">
+                <!-- <a [href]="assistantInfo.pdf" target="_blank">Download CV</a> -->
+                <!-- <a [href]="pdfSrc" class="image fit"><img  [src]="pdfSrc" alt=""></a> -->
+                <iframe [src]="pdfSrc" width="100%" height="500px"></iframe>
+                <!-- cv -->
+                <!-- <button (click)="C:\Users\21650\Desktop\sencare\backend\images">Download CV</button> -->
+                <!--                
+                <ngx-extended-pdf-viewer [src]="assistantInfo.pdf" [height]="'90vh'" [showBorders]="showBorders" [useBrowserLocale]="true" [(scrollMode)]="scrollMode" zoom="30%">
+                </ngx-extended-pdf-viewer> -->
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="chooseus-content position-relative">
+                    <h3 class="why-chooseus">Welcome <span class="concern">To Assistant Info</span></h3>
+
+
+                    <div class="input-icons">
+
+                        <div class="sencare-team-inner">
+                            <figure class="service-figure-mb">
+                                <img [src]="assistantInfo.avatar">
+
+                            </figure>
+                            <p>First Name : {{assistantInfo.firstName}}</p>
+                            <p>Last Name :{{assistantInfo.lastName}}</p>
+                            <p>Last Name :{{assistantInfo.phoneNumber}}</p>
+                            <p>Gender: {{assistantInfo.gender}}</p>
+
+
+                            <button class="btn btn-primary mt-3" type="button" (click)="contact()" style="background-color: #8bc53e;"> Contact Me</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+#map { height: 800px; }
+
+/* .container {
+    position: relative;
+    height: 500px; /* hauteur fixe */
+
+  
+  /* .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    height: 100%; /* hauteur relative à son parent */
+  
+
+/* #map {
+    height: 400px;
+  }*/ 

@@ -1,0 +1,45 @@
+<div class="choose-us-section">
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pt-2">
+            <!-- <a [href]="assistantInfo.pdf" target="_blank">Download CV</a> -->
+            <!-- <a [href]="pdfSrc" class="image fit"><img  [src]="pdfSrc" alt=""></a> -->
+            <iframe [src]="pdfSrc" width="100%" height="700px"></iframe>
+
+            <!-- cv -->
+            <!-- <button (click)="C:\Users\21650\Desktop\sencare\backend\images">Download CV</button> -->
+            <!--                
+            <ngx-extended-pdf-viewer [src]="assistantInfo.pdf" [height]="'90vh'" [showBorders]="showBorders" [useBrowserLocale]="true" [(scrollMode)]="scrollMode" zoom="30%">
+            </ngx-extended-pdf-viewer> -->
+        </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="chooseus-content position-relative">
+                  <h3 class="why-chooseus">Welcome <span class="concern">To Assistant Info</span></h3>
+
+
+                  <div class="input-icons">
+
+                      <div class="sencare-team-inner">
+                          <figure class="service-figure-mb">
+                              <img [src]="userfinded[0].avatar">
+
+                          </figure>
+                          <p>First Name : {{userfinded[0].firstName}}</p>
+                          <p>Last Name :{{userfinded[0].lastName}}</p>
+                          <p>Phone Number :{{userfinded[0].phoneNumber}}</p>
+                          <p>Email :{{userfinded[0].email}}</p>
+                          <p>Gender: {{userfinded[0].gender}}</p>
+                          <p>Price: {{userfinded[0].price}}</p>
+                          <p>Experience: {{userfinded[0].experience}}</p>
+                          <p>Address: {{userfinded[0].address}}</p>
+
+
+                      </div>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

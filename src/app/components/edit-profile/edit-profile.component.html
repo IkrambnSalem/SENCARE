@@ -1,0 +1,146 @@
+<!-- <section class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="left-section" data-aos="fade-up"  *ngIf="assistant">
+              
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="right-section">
+               <form #editForm (ngSubmit)="editAssistant()">
+                    <h2>User Information</h2>
+                    <div class="input-icons">
+                     <div class="form-group position-relative">
+                      <div>
+                        <input type="text" class="form-control input-text" id="validationCustom01" name="firstName" [(ngModel)]="assistant.firstName">
+                        <i class="fa fa-user icon1">  </i>
+                     </div>
+                     <div class="form-group position-relative">
+                        
+                        <input type="text" class="form-control input-text" id="validationCustom07" name="lastName" [(ngModel)]="assistant.lastName">
+                        <i class="fa fa-user icon1">  </i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <input for="validationCustom02"  class="form-control input-text" name="phoneNumber" [(ngModel)]="assistant.phoneNumber">
+                        <i class="fa-solid fa-phone icon2"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <input  type="email" id="validationCustom03" class="form-control input-text" name="email" [(ngModel)]="assistant.email">
+                        <i class="fa-solid fa-envelope icon3"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <input type="text" id="validationCustom04" class="form-control input-text" name="address" [(ngModel)]="assistant.address">
+                    </div>
+                     <div class="form-group position-relative">
+                        <input type="text" id="validationCustom05" class="form-control input-text" name="gender" [(ngModel)]="assistant.gender">
+                    <i class="fa-solid fa-venus-mars icon3"></i>
+                     </div>
+                     <div class="form-group position-relative">
+                        <input type="date" id="validationCustom06" class="form-control input-text"name="birthday"  [(ngModel)]="assistant.birthday" >
+                        <span>{{ assistant.birthday | date: 'dd-MM-yyyy' }}</span>
+                        <i class="fa-solid fa-calendar-alt icon3"></i>
+                     </div>
+                     <div class="banner-btn discover-btn-banner">
+                        <button type="submit"  class="text-decoration-none">Edit Pofile</button>
+                 
+                    </div>
+                    </div>
+                    </div>
+                </form>
+                
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+ </section> -->
+
+<div class="offer-section popup-section position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-lg-0 mb-md-0 mb-3">
+                <form #profilForm (ngSubmit)="editProfile()">
+                    <h2>Welcome {{user.firstName}}</h2>
+                    <div class="input-icons">
+                        <div class="form-group position-relative" style="margin-bottom: 200px;">
+                            <div>
+                                <input type="text" class="form-control input-text popup-section-number"
+                                    style="font-size: 20px;" id="validationCustom01" name="firstName"
+                                    [(ngModel)]="user.firstName">
+                                <i class="fa fa-user icon1"> </i>
+                            </div>
+                            <div class="form-group position-relative">
+
+                                <input type="text" class="form-control input-text  popup-section-number"
+                                    style="font-size: 20px;" id="validationCustom07" name="lastName"
+                                    [(ngModel)]="user.lastName">
+                                <i class="fa fa-user icon1"> </i>
+                            </div>
+                            <div class="form-group position-relative">
+                                <input for="validationCustom02" class="form-control input-text  popup-section-number"
+                                    style="font-size: 20px;" name="phoneNumber" [(ngModel)]="user.phoneNumber">
+                                <i class="fa-solid fa-phone icon2"></i>
+                            </div>
+                            <div class="form-group position-relative">
+                                <input type="email" id="validationCustom03"
+                                    class="form-control input-text  popup-section-number" name="email"
+                                    style="font-size: 20px;" [(ngModel)]="user.email">
+                                <i class="fa-solid fa-envelope icon3"></i>
+                            </div>
+                            <div class="form-group position-relative">
+                                <input type="text" id="validationCustom04"
+                                    class="form-control input-text  popup-section-number" name="address"
+                                    style="font-size: 20px;" [(ngModel)]="user.address">
+                            </div>
+                            <div class="form-group position-relative">
+                                <input type="text" id="validationCustom05"
+                                    class="form-control input-text  popup-section-number" name="gender"
+                                    style="font-size: 20px;" [(ngModel)]="user.gender">
+                                <i class="fa-solid fa-venus-mars icon3"></i>
+                            </div>
+                            <div class="form-group position-relative">
+                                <input type="text" id="validationCustom06"
+                                    class="form-control input-text popup-section-number" style="font-size: 20px;"
+                                    [(ngModel)]="birthday" name="birthday">
+                                <i class="fa-solid fa-calendar-alt icon3"></i>
+                            </div>
+
+                            <div class="popup-btn">
+                                <!-- <a href="about.html">About us</a> -->
+                                <button type="submit" class="text-decoration-none" style="background-color:#8bc53e; font-size: 20px; color: #662d91;">Edit Pofile</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+         
+            <div class="col-lg-5 col-md-5 col-sm-12 mb-lg-0 mb-md-0 mb-3">
+                <div class="video-section-box">
+                    <figure>
+                        <ng-container *ngIf="user.avatar">
+                            <img [src]="user.avatar" alt="" class="img-fluid rounded-circle">
+                        </ng-container>
+                        <ng-container *ngIf="!user.avatar">
+                            <img src="assets/images/latest-blog-img1.png" alt="" class="img-fluid rounded-circle">
+                        </ng-container>
+                    </figure>
+                    <!-- <img [src]="user.avatar" *ngIf="user"> -->
+                    <div class="form-group" style="visibility: hidden;">
+                        <input type="file" class="form-control" #filePicker (change)="onFileChange($event)">
+                      </div>
+                      <div class="text-center mt-4">
+                        <button class="btn btn-info" (click)="filePicker.click()" style="background-color: #8bc53e; border: #8bc53e; margin-right:100px;">
+                          Change your picture
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

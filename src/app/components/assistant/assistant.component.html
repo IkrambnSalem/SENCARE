@@ -1,0 +1,26 @@
+<div class="service-offer-section service-offer-section2 sencare-tem-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="service-offer-content" data-aos="fade-up">
+                    <h2>SenCare<span class="support">Team</span></h2>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+                <div class="service-inner">
+
+                    <div class="container">
+                        <div class="row">
+                            <div *ngFor="let m of assistantTab">
+                                <app-assistant1 [X]="m"></app-assistant1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

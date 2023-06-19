@@ -1,0 +1,29 @@
+
+  
+  <div class="choose-us-section">
+    <div class="container">
+      <div class="chooseus-content position-relative" style="margin-bottom: 70px;">
+      <h2 class="why-chooseus">Here <span class="concern">are the results of your search </span></h2>
+    </div>
+      <div class="row">
+        <div class="col-md-6" *ngFor="let user of usersFound">
+          <div class="input-icons">
+            <div class="sencare-team-inner">
+              <figure class="service-figure-mb">
+                <img [src]="user.avatar">
+              </figure>
+              <p>First Name: {{user.firstName}}</p>
+              <p>Last Name: {{user.lastName}}</p>
+              <p>Phone Number: {{user.phoneNumber}}</p>
+              <p>Email: {{user.email}}</p>
+              <p>Gender: {{user.gender}}</p>
+              <p>Price: {{user.price}}</p>
+              <p>Experience: {{user.experience}}</p>
+              <p>Address: {{user.address}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

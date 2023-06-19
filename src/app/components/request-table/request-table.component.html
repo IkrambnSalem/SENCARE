@@ -1,0 +1,38 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        REQUESTS
+    </div>
+    <div class="card-body">
+      <div class="datatable-search">
+      <input class="datatable-input" placeholder="Search..." type="search" title="Search within table" aria-controls="datatablesSimple">
+    </div>
+            <table class="table table-striped table-dark" id="datatablesSimple">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">email User</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of requestTab">
+                    <th scope="row">{{user._id}}</th>
+                    <td>{{user.UserName}}</td>
+                    <td>{{user.emailUser}}</td>
+                    <td>{{user.telUser}}</td>
+                    <td>{{user.message}}</td>
+
+                    <td><button type="button" class="btn btn-success" (click)="accpetRequest(user._id)">Accepted</button>
+                      <button type="button" class="btn btn-warning" (click)="refusRequest(user._id)">Decline</button></td>
+                  </tr>
+               
+                </tbody>
+              </table>
+        
+    </div>
+</div>
+
